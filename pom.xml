@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.10.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.xulihuazj</groupId>
+    <artifactId>solution-api</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>service</module>
+        <module>service-impl</module>
+        <module>api-facade</module>
+        <module>data</module>
+        <module>api</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <mybatis-spring-boot.version>1.2.0</mybatis-spring-boot.version>
+        <mysql-connector.version>5.1.39</mysql-connector.version>
+        <druid.version>1.0.20</druid.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--swagger2 -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>2.6.1</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>2.6.1</version>
+            </dependency>
+            <!--swagger2 end-->
+
+            <!-- Spring Boot Mybatis 依赖 -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>4.3.7.RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper</artifactId>
+                <version>4.1.6</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.jsqlparser</groupId>
+                <artifactId>jsqlparser</artifactId>
+                <version>0.9</version>
+            </dependency>
+
+            <!-- MySQL 连接驱动依赖 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector.version}</version>
+            </dependency>
+
+            <!-- Druid 数据连接池依赖 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <!-- HttpClient -->
+            <dependency>
+                <groupId>commons-httpclient</groupId>
+                <artifactId>commons-httpclient</artifactId>
+                <version>3.1</version>
+            </dependency>
+
+            <!-- dom4j -->
+            <dependency>
+                <groupId>dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>1.6.1</version>
+            </dependency>
+
+            <!-- freemarker -->
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>2.3.23</version>
+            </dependency>
+
+            <!-- kaptcha验证码 -->
+            <dependency>
+                <groupId>com.github.penggle</groupId>
+                <artifactId>kaptcha</artifactId>
+                <version>2.3.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.4</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.owasp</groupId>
+                <artifactId>antisamy</artifactId>
+                <version>1.4</version>
+            </dependency>
+
+            <!-- spring mail -->
+            <dependency>
+                <groupId>javax.mail</groupId>
+                <artifactId>mail</artifactId>
+                <version>1.4.5</version>
+            </dependency>
+
+            <!--mamahome  booking依赖-->
+            <dependency>
+                <groupId>com.cf.mamahome</groupId>
+                <artifactId>booking-ibusiness</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+            <!--hessian依赖-->
+            <dependency>
+                <groupId>com.caucho</groupId>
+                <artifactId>hessian</artifactId>
+                <version>4.0.37</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <compilerArgument>-parameters</compilerArgument>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <!--<scm>-->
+        <!--<url>https://github.com/wxpay/WXPay-SDK-Java</url>-->
+        <!--<connection>git@github.com:wxpay/WXPay-SDK-Java.git</connection>-->
+        <!--<developerConnection>https://github.com/wxpay/WXPay-SDK-Java</developerConnection>-->
+    <!--</scm>-->
+    <!--<distributionManagement>-->
+        <!--<repository>-->
+            <!--<id>releases</id>-->
+            <!--<name>Nexus Releases Repository</name>-->
+            <!--<url>http://192.168.1.10:8081/nexus/content/repositories/releases/</url>-->
+        <!--</repository>-->
+        <!--<snapshotRepository>-->
+            <!--<id>snapshots</id>-->
+            <!--<name>Nexus Snapshots Repository</name>-->
+            <!--<url>http://192.168.1.10:8081/nexus/content/repositories/snapshots/</url>-->
+            <!--<uniqueVersion>false</uniqueVersion>-->
+        <!--</snapshotRepository>-->
+    <!--</distributionManagement>-->
+
+
+</project>
